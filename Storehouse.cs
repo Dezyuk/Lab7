@@ -15,11 +15,11 @@ namespace Lab7
         /// <summary>
         /// Добавление новой запчасти в List.
         /// </summary>
-        /// <param name="newPart">Новая деталь которую необходимо добавить, проверяется есть ли уже данный объект в List, а так-же на схожесть Id.</param>
+        /// <param name="newPart">Новая деталь которую необходимо добавить, проверяется есть ли уже данный объект в List через проверку Id.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void AddParts(PartsWarehouse newPart)
         {
-            if (newPart is not null && !warehouseList.Contains(newPart))
+            if (newPart is not null)
             {
                 foreach (PartsWarehouse part in warehouseList)
                 {
@@ -32,6 +32,7 @@ namespace Lab7
             }
             else
             {
+                Console.WriteLine(newPart);
                 throw new ArgumentOutOfRangeException("This part is already in Storage!");
             }
         }

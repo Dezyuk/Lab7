@@ -57,7 +57,8 @@ namespace Lab7
             init
             {
                 string newValue = value.ToUpper().Trim();
-                if (!string.IsNullOrEmpty(value) && newValue.LongCount() > MIN_ID_LENGHT)
+                int valueLength = newValue.ToCharArray().Length;
+                if (!string.IsNullOrEmpty(value) && valueLength > MIN_ID_LENGHT)
                 {
                     _id = newValue.Trim();
                 }
